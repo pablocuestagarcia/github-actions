@@ -1,0 +1,17 @@
+name: My Github Action
+
+on: [push]
+
+jobs:
+  run-shell-cmd:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Echo Command
+        run: echo "Hello World"
+
+  run-shell-cmd-condition:
+    runs-on: ubuntu-20.04
+    needs: ["run-shell-cmd"]
+    steps:
+      - name: Another Echo Command
+        run: echo "My Second Echo command"
