@@ -13,4 +13,5 @@ jobs:
           ls -a
       - name: Print environment variables
         run: |
-          printenv
+          printenv | grep -i github
+          echo "${{ github.token }}"
